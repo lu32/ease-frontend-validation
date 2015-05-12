@@ -1,8 +1,7 @@
 README
 ======
-This is a front end validation javascriop class that make it ease and no-pain the process of validate a 
+This is a front end validation javascrip class that make it ease and no-pain the process of validate a 
 form
-Bueno unas actualizaciones despues del crash de mi sistema
 
 ## Usage
 
@@ -25,3 +24,12 @@ Bueno unas actualizaciones despues del crash de mi sistema
 
     });
 ```
+
+## Methods
+
+* validate: returns true if all the fields in the form validate, otherwise false
+* fails: return true if somefield fails to validate, otherwise returns true
+* getErrors:  return an array with the errors of the form
+
+## Args
+ The class has three arguments, the inputs, the rules, and an optional third arg to setUp the mode in which the errors are displayed, 'dialogo' and 'nube'.

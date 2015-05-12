@@ -5,6 +5,9 @@ function validation(inputs, rules, display){
     display = typeof display !== 'undefined' ?  display : 'nube';
     this.submit = true;
     this.errorsArray = [];
+    this.getErrors =  function(){
+        return this.errorsArray;
+    }
     this.fails = function(){
             return ( this.validate() )? false : true;
     };
@@ -131,16 +134,13 @@ function validation(inputs, rules, display){
 
             // what to do if there is any errors
             if ( inputErrors.length > 0  ) {
+                this.errorsArray.push(inputErrors);
                 switch(display){
                     case 'nube':
                         this.nube(input, inputErrors.join("<br>"));
                     break;
                     case 'dialogo':
                         this.dialogo("Validación", inputErrors.join("<br>"), 10000);
-                    break;
-
-                    case 'array':
-                        this.errorsArray.push(inputErrors);
                     break;
                     default:
 
